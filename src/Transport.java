@@ -1,4 +1,6 @@
-public abstract class Transport {
+import java.util.Objects;
+
+public abstract class Transport implements Competing{
     private String brand;
     private String model;
     private Double volumeEngine;
@@ -57,6 +59,22 @@ public abstract class Transport {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport transport = (Transport) o;
+        return Objects.equals(brand, transport.brand)
+                && Objects.equals(model, transport.model)
+                && Objects.equals(volumeEngine, transport.volumeEngine);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, volumeEngine);
+    }
+
     public abstract void startMove();
     public abstract void stopMove();
+
 }

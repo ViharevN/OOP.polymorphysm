@@ -15,7 +15,41 @@ public class Main {
         Buses paz = new Buses("Паз", "4234", 4.4);
         Buses gazelle = new Buses("Газель", "Next", 2.7);
 
+        hyundai.pitStop();
+        kamaz.pitStop();
+        nefaz.pitStop();
 
+        DriverCatLicenseB vasily = new DriverCatLicenseB("Василий",
+                "Васильевич",
+                "Васильев",
+                "права категории В",
+                "3 года опыта",
+                bmw);
+        vasily.reFuel();
+        vasily.startMove();
+        System.out.println(vasily.toString());
+
+        DriverCatLicenseC petr = new DriverCatLicenseC("Петр",
+                "Петрович",
+                "Петров",
+                "права категории С",
+                "7 лет опыта",
+                kamaz);
+        petr.reFuel();
+        petr.startMove();
+        System.out.println(petr.toString());
+
+        DriverCatLicenseD alex = new DriverCatLicenseD("Алексей",
+                "Алексеевич",
+                "Алексеев",
+                "права категории Д",
+                "12 лет опыта",
+                nefaz);
+        alex.reFuel();
+        alex.startMove();
+        System.out.println(alex.toString());
+        alex.stopMove();
+        
 
     }
 }

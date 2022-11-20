@@ -77,4 +77,6 @@ public abstract class Transport implements Competing{
     public abstract void startMove();
     public abstract void stopMove();
 
+    public abstract void checkType();
+
 }

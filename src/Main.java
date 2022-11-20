@@ -1,19 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        Cars lada = new Cars("Лада", "Гранта", 1.6);
-        Cars bmw = new Cars("БМВ", "3-я серия", 2.5);
-        Cars audi = new Cars("Ауди", "А5", 3.2);
-        Cars hyundai = new Cars("Hyundai", "Avante", 1.8);
+        Cars lada = new Cars("Лада", "Гранта", 1.6, BodyType.SEDAN);
+        Cars bmw = new Cars("БМВ", "3-я серия", 2.5, BodyType.SEDAN);
+        Cars audi = new Cars("Ауди", "А5", 3.2, BodyType.SEDAN);
+        Cars hyundai = new Cars("Hyundai", "Avante", 1.8, BodyType.SEDAN);
 
-        Trucks kamaz = new Trucks("Камаз", "5511", 11.95);
-        Trucks maz = new Trucks("Маз", "5340", 6.9);
-        Trucks man = new Trucks("Man", "TGA-18-410", 11.9);
-        Trucks renault = new Trucks("Renault", "Magnum", 12.9);
+        Trucks kamaz = new Trucks("Камаз", "5511", 11.95, LoadCapacity.N3);
+        Trucks maz = new Trucks("Маз", "5340", 6.9,LoadCapacity.N2);
+        Trucks man = new Trucks("Man", "TGA-18-410", 11.9, LoadCapacity.N2);
+        Trucks renault = new Trucks("Renault", "Magnum", 12.9,LoadCapacity.N1);
 
-        Buses nefaz = new Buses("Nefaz", "5299", 6.7);
-        Buses busMaz = new Buses("Маз", "103", 6.4);
-        Buses paz = new Buses("Паз", "4234", 4.4);
-        Buses gazelle = new Buses("Газель", "Next", 2.7);
+        Buses nefaz = new Buses("Nefaz", "5299", 6.7,Capacity.SMALL);
+        Buses busMaz = new Buses("Маз", "103", 6.4, Capacity.ESPECIALLY_BIG);
+        Buses paz = new Buses("Паз", "4234", 4.4, Capacity.AVERAGE);
+        Buses gazelle = new Buses("Газель", "Next", 2.7, Capacity.BIG);
 
         hyundai.pitStop();
         kamaz.pitStop();
@@ -49,7 +49,11 @@ public class Main {
         alex.startMove();
         System.out.println(alex.toString());
         alex.stopMove();
-        
+        man.checkType();
+        nefaz.checkType();
+
+
+
 
     }
 }

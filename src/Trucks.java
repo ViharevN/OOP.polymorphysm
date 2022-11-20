@@ -1,6 +1,16 @@
 public class Trucks extends Transport{
-    public Trucks(String brand, String model, Double volumeEngine) {
+    private LoadCapacity loadCapacity;
+    public Trucks(String brand, String model, Double volumeEngine, LoadCapacity loadCapacity) {
         super(brand, model, volumeEngine);
+        this.loadCapacity = loadCapacity;
+    }
+
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
     }
 
     @Override
@@ -26,4 +36,14 @@ public class Trucks extends Transport{
     public void maxSpeed() {
         System.out.println("Максимальная скорость " + getBrand());
     }
+
+    @Override
+    public void checkType() {
+        if (loadCapacity == null) {
+            System.out.println("Данных по авто недостаточно");
+        } else {
+            System.out.println(loadCapacity + " тип авто");
+        }
+    }
+
 }

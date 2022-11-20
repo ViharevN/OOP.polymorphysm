@@ -1,6 +1,16 @@
 public class Buses extends Transport {
-    public Buses(String brand, String model, Double volumeEngine) {
+    private Capacity capacity;
+    public Buses(String brand, String model, Double volumeEngine, Capacity capacity) {
         super(brand, model, volumeEngine);
+        this.capacity = capacity;
+    }
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
     }
 
     @Override
@@ -24,5 +34,13 @@ public class Buses extends Transport {
     @Override
     public void maxSpeed() {
         System.out.println("Максимальная скорость " + getBrand());
+    }
+    @Override
+    public void checkType() {
+        if (capacity == null) {
+            System.out.println("Данных по авто недостаточно");
+        } else {
+            System.out.println(capacity + " тип авто");
+        }
     }
 }

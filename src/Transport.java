@@ -79,4 +79,6 @@ public abstract class Transport implements Competing{
 
     public abstract void checkType();
 
+    public abstract boolean checkDiagnostic();
+
 }

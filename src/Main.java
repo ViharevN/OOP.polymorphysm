@@ -24,7 +24,8 @@ public class Main {
                 "Васильев",
                 "права категории В",
                 "3 года опыта",
-                bmw);
+                bmw,
+                "B");
         vasily.reFuel();
         vasily.startMove();
         System.out.println(vasily.toString());
@@ -34,7 +35,8 @@ public class Main {
                 "Петров",
                 "права категории С",
                 "7 лет опыта",
-                kamaz);
+                kamaz,
+                "C");
         petr.reFuel();
         petr.startMove();
         System.out.println(petr.toString());
@@ -44,7 +46,8 @@ public class Main {
                 "Алексеев",
                 "права категории Д",
                 "12 лет опыта",
-                nefaz);
+                nefaz,
+                "D");
         alex.reFuel();
         alex.startMove();
         System.out.println(alex.toString());
@@ -52,8 +55,40 @@ public class Main {
         man.checkType();
         nefaz.checkType();
 
+        checkDiagnostic(kamaz,
+                hyundai,
+                man,
+                bmw,
+                nefaz,
+                maz,
+                gazelle,
+                lada,
+                audi,
+                hyundai);
 
 
 
+
+
+    }
+
+    private static void checkDiagnostic(Transport... transports) {
+        for (Transport transport : transports) {
+            serviceTransport(transport);
+        }
+    }
+
+    private static void serviceTransport(Transport transport) {
+        if (!transport.checkDiagnostic()) {
+            try {
+                throw new RuntimeException(
+                        "автомобиль "
+                                + transport.getBrand() + " "
+                                + transport.getModel() +
+                                " не прошел диагностику");
+            } catch (RuntimeException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 }

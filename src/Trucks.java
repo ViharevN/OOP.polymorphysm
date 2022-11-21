@@ -46,4 +46,8 @@ public class Trucks extends Transport{
         }
     }
 
+    public boolean checkDiagnostic() {
+        return Math.random() > 0.7;
+    }
+
 }

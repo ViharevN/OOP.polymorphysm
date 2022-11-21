@@ -43,4 +43,10 @@ public class Buses extends Transport {
             System.out.println(capacity + " тип авто");
         }
     }
+
+    @Override
+    public boolean checkDiagnostic() {
+        System.out.println("Автобус " + getBrand() + getModel() +  "  в диагностике не нуждается");
+        return false;
+    }
 }

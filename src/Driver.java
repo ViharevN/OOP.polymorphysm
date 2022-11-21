@@ -1,3 +1,5 @@
+import jdk.jfr.Category;
+
 public class Driver <T extends Transport>{
     private String firstName;
     private String secondName;
@@ -5,8 +7,10 @@ public class Driver <T extends Transport>{
     private String carLicense;
     private String experience;
     private T cars;
+    private String category;
 
-    public Driver(String firstName, String secondName, String lastName, String carLicense, String experience, T cars) {
+
+    public Driver(String firstName, String secondName, String lastName, String carLicense, String experience, T cars, String category) {
         if (firstName != null && !firstName.isBlank() && !firstName.isEmpty()) {
             this.firstName = firstName;
         } else {
@@ -35,6 +39,8 @@ public class Driver <T extends Transport>{
         if (cars != null) {
             this.cars = cars;
         }
+
+        setCategory(category);
     }
     public String getFullName() {
         return firstName + " " + secondName + " " + lastName;
@@ -62,6 +68,14 @@ public class Driver <T extends Transport>{
     }
     public void reFuel() {
         System.out.println("Водитель " + getFullName() + " заправляет топливом " + cars.getBrand());
+    }
+
+    public void setCategory(String category) {
+        if (category == null) {
+            throw new IllegalArgumentException("Необходимо указать категорию прав");
+        } else {
+            this.category = category;
+        }
     }
 
     @Override

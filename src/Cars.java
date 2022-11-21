@@ -47,4 +47,8 @@ public class Cars extends Transport {
             System.out.println(bodyType + " тип авто");
         }
     }
+
+    public boolean checkDiagnostic() {
+        return Math.random() > 0.7;
+    }
 }

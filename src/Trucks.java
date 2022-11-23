@@ -1,9 +1,12 @@
+import java.util.List;
+
 public class Trucks extends Transport{
     private LoadCapacity loadCapacity;
     public Trucks(String brand, String model, Double volumeEngine, LoadCapacity loadCapacity) {
         super(brand, model, volumeEngine);
         this.loadCapacity = loadCapacity;
     }
+
 
     public LoadCapacity getLoadCapacity() {
         return loadCapacity;
